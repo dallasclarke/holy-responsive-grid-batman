@@ -15,55 +15,112 @@
 }
 
 #header {
-  grid-column: 1 / 4;
-  grid-row: 1 / 2;
+  /* grid-column: 1 / 4;
+  grid-row: 1 / 2; */
   /* or, instead of the above two lines */
   /* we could use grid areas:  */
-  /* grid-area: hdr; */
+  grid-area: hdr;
   background-color: #f3ca40;
 }
 
 #nav {
-  grid-row: 2 / 4;
-  grid-column: 1 / 2;
+  /* grid-row: 2 / 4;
+  grid-column: 1 / 2; */
   /* or, instead of the above two lines */
   /* we could use grid areas:  */
-  /* grid-area: nav; */
+  grid-area: nav;
   background-color: #4b4e6d;
 }
 
 #article-1 {
-  grid-row: 2 / 3;
-  grid-column: 2 / 3;
+  /* grid-row: 2 / 3;
+  grid-column: 2 / 3; */
   /* or, instead of the above two lines */
   /* we could use grid areas:  */
-  /* grid-area: ar1; */
+  grid-area: ar1;
   background-color: #6a8d92;
 }
 
 #article-2 {
-  grid-row: 3 / 4;
-  grid-column: 2 / 3;
+  /* grid-row: 3 / 4;
+  grid-column: 2 / 3; */
   /* or, instead of the above two lines */
   /* we could use grid areas:  */
-  /* grid-area: ar2; */
+  grid-area: ar2;
   background-color: cornflowerblue;
 }
 
 #ads {
-  grid-row: 2 / 4;
-  grid-column: 3 / 4;
+  /* grid-row: 2 / 4;
+  grid-column: 3 / 4; */
   /* or, instead of the above two lines */
   /* we could use grid areas:  */
-  /* grid-area: ads; */
+  grid-area: ads;
   background-color: #f2a541;
 }
 
 #footer {
-  grid-column: 1 / 4;
-  grid-row: 4 / 5;
+  /* grid-column: 1 / 4;
+  grid-row: 4 / 5; */
   /* or, instead of the above two lines */
   /* we could use grid areas:  */
-  /* grid-area: ftr; */
+  grid-area: ftr;
   background-color: #f08a4b;
+}
+
+
+@media (max-width: 600px) {
+  #app {
+    grid-template-areas: 
+    "hdr hdr hdr"
+    "nav nav nav"
+    "ar1 ar1 ar1"
+    "ar2 ar2 ar2"
+    "ads ads ads"
+    "ftr ftr ftr";
+  }
+  #nav {
+    grid-area: nav;
+  }
+  #article-1 {
+    grid-area: ar1;
+  }
+  #article-2 {
+    grid-area: ar2;
+  }
+  #ads {
+    grid-area: ads;
+  }
+  #footer {
+    grid-area: ftr;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px){
+  #app {
+    grid-template-areas: 
+    "hdr hdr hdr"
+    "nav nav nav"
+    "ar1 ar1 ads"
+    "ar2 ar2 ads"
+    "ftr ftr ftr";
+  }
+  #header {
+    grid-area: hdr;
+  }
+  #nav {
+    grid-area: nav;
+  }
+  #article-1 {
+    grid-area: ar1;
+  }
+  #article-2 {
+    grid-area: ar2;
+  }
+  #ads {
+    grid-area: ads;
+  }
+  #footer {
+    grid-area: ftr;
+  }
 }
